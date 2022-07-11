@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import { IconButton, InputBase } from "@mui/material";
+import { PhotoCamera } from "@mui/icons-material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <Button
+        variant="contained"
+        onClick={() => {
+          alert("clicked");
+        }}
+        size="small"
+        color="success"
+      >
+        Hello World
+      </Button>
+
+      <label htmlFor="contained-button-file">
+        <Button variant="contained" component="span">
+          Upload
+        </Button>
+      </label>
+      <label htmlFor="icon-button-file">
+        <InputBase accept="image/*" id="icon-button-file" type="file" />
+        <IconButton
+          color="primary"
+          aria-label="upload picture"
+          component="span"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <PhotoCamera />
+        </IconButton>
+      </label>
+    </>
   );
 }
-
 export default App;
